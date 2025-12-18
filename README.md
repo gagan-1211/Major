@@ -1,127 +1,118 @@
-[![CI](https://github.com/mozaloom/medgan/actions/workflows/main.yml/badge.svg)](https://github.com/mozaloom/medgan/actions/workflows/main.yml)
-[![Docker Image CI](https://github.com/mozaloom/medgan/actions/workflows/push-docker.yml/badge.svg)](https://github.com/mozaloom/medgan/actions/workflows/push-docker.yml)
-
 # MedGAN: AI-Powered Brain Tumor Imaging
 
-<img src="static/css/Blue_ABstract_Brain_Technology_Logo__1_-removebg-preview.png" alt="medgan Logo" width="120" style="margin-bottom: 20px;">
+<img src="static/css/Blue_ABstract_Brain_Technology_Logo__1_-removebg-preview.png" alt="MedGAN Logo" width="120" style="margin-bottom: 20px;">
 
 ## Overview
 
-MedGAN is a comprehensive framework for generating high-quality synthetic brain tumor images using state-of-the-art Generative Adversarial Networks (GANs). The project focuses exclusively on brain tumor MRI scans and includes implementations of multiple cutting-edge GAN architectures optimized for brain tumor dataset generation.
+**MedGAN** is an end-to-end AI project designed and developed by me to generate high-quality synthetic brain tumor MRI images using advanced Generative Adversarial Networks (GANs).  
+The project focuses on improving data availability and diversity for brain tumor analysis by leveraging multiple state-of-the-art GAN architectures, along with an integrated web interface for image generation and tumor detection.
 
-## Features
+This project demonstrates hands-on experience in **deep learning, medical imaging, GAN architectures, and full-stack AI deployment**.
 
-- **Multiple GAN Implementations:**
-  - DCGAN (Deep Convolutional GAN)
-  - ProGAN (Progressive Growing of GANs)
-  - StyleGAN2 (Style-based Generator with improvements)
-  - WGAN (Wasserstein GAN with gradient penalty)
+---
 
-- **Web Application Interface:**
-  - Generate synthetic brain MRI scans
-  - Detect tumor types from uploaded MRI images
-  - Interactive and user-friendly interface
+## Key Features
 
-- **Pre-trained Models:**
-  - Models for three tumor types: Glioma, Meningioma, and Pituitary
-  - ViT-based tumor detection model (92% accuracy)
+### Multi-Architecture GAN Implementation
+Implemented and trained multiple GAN variants specifically for brain tumor MRI synthesis:
+- DCGAN (Deep Convolutional GAN)
+- ProGAN (Progressive Growing of GANs)
+- StyleGAN2 (Style-based Generator)
+- WGAN-GP (Wasserstein GAN with Gradient Penalty)
+
+### Web-Based AI Application
+- Upload and analyze brain MRI images
+- Generate synthetic brain tumor MRI scans
+- Tumor type detection using deep learning
+- Interactive Flask-based web interface
+
+### Pre-trained Deep Learning Models
+- Synthetic data generation for:
+  - Glioma
+  - Meningioma
+  - Pituitary tumors
+- Vision Transformer (ViT) based tumor classification model  
+  - Achieved approximately **92% accuracy**
+
+---
 
 ## Architecture Performance Comparison
 
-| Architecture | Image Quality | Training Stability | Generation Diversity | Training Speed |
-|--------------|---------------|--------------------|-----------------------|---------------|
-| ProGAN       | ⭐⭐⭐⭐     | ⭐⭐⭐⭐⭐        | ⭐⭐⭐⭐            | ⭐⭐⭐        |
-| StyleGAN2    | ⭐⭐⭐⭐⭐   | ⭐⭐⭐⭐          | ⭐⭐⭐⭐⭐          | ⭐⭐         |
-| WGAN-GP      | ⭐⭐⭐       | ⭐⭐⭐⭐          | ⭐⭐⭐              | ⭐⭐⭐⭐     |
-| DCGAN        | ⭐⭐⭐       | ⭐⭐⭐            | ⭐⭐                | ⭐⭐⭐⭐⭐   |
+| GAN Architecture | Image Quality | Training Stability | Diversity | Training Speed |
+|------------------|--------------|-------------------|--------------|----------------|
+| ProGAN           | ⭐⭐⭐⭐    | ⭐⭐⭐⭐⭐     | ⭐⭐⭐⭐   | ⭐⭐⭐            
+| StyleGAN2        | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐        | ⭐⭐⭐⭐⭐ | ⭐⭐             
+| WGAN-GP          | ⭐⭐⭐      | ⭐⭐⭐⭐        | ⭐⭐⭐      | ⭐⭐⭐⭐           
+| DCGAN            | ⭐⭐⭐      | ⭐⭐⭐           | ⭐⭐        | ⭐⭐⭐⭐⭐          
+
+---
+
+## Tech Stack
+
+- **Programming Language:** Python  
+- **Deep Learning Framework:** PyTorch  
+- **Computer Vision:** OpenCV  
+- **Web Framework:** Flask  
+- **Models:** GANs, Vision Transformer (ViT)  
+- **Dataset:** Brain Tumor MRI Dataset (Kaggle)
+
+---
 
 ## Getting Started
 
 ### Prerequisites
 - Python 3.9+
 - PyTorch 1.9+
-- Flask (for web application)
-- CUDA-capable GPU (recommended)
+- Flask
+
+### Clone the Repository
+```bash
+git clone https://github.com/gagan-1211/Major.git
+cd Major
+
+
 
 ### Installation
 
-1. Clone the repository:
 ```bash
 git clone https://github.com/gagan-1211/Major.git
-cd medgan
-```
-
-2. Install required packages:
-```bash
+cd Major
 pip install -r requirements.txt
 ```
 
-3. Run the web application:
+### Run the Application
+
 ```bash
 python app.py
 ```
 
-4. Access the web interface at `http://localhost:5000`
-
-## Usage
-
-### Web Application
-
-The MedGAN web application offers two primary functionalities:
-
-1. **Generate synthetic brain MRI scans:**
-   - Select tumor type (Glioma, Meningioma, Pituitary)
-   - Choose GAN architecture
-   - Generate high-quality synthetic MRI images
-
-2. **Detect tumor types:**
-   - Upload brain MRI scans
-   - Receive AI-powered tumor classification
-   - View detection confidence scores
-
-
-Check the individual model implementation files for specific training parameters.
-
-## Project Structure
-
+Open your browser and navigate to:
 ```
-medgan/
-├── app.py                   # Flask web application
-├── medgan/                  # Core GAN implementations
-│   ├── dcgan.py
-│   ├── progan.py
-│   ├── stylegan.py
-│   ├── wgan.py
-│   └── vit.py
-├── models/                  # Pre-trained model weights
-├── notebooks/               # Training notebooks
-│   ├── dcgan/
-│   ├── progan/
-│   ├── stylegan/
-│   └── wgan/
-├── static/                  # Web assets
-└── templates/               # HTML templates
+http://127.0.0.1:5000
 ```
 
-## Contributing
+---
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+## Project Motivation
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+Medical imaging datasets are often limited due to privacy concerns and restricted access.  
+MedGAN was built to generate high-quality synthetic brain tumor MRI images that can be used for:
+- Model training
+- Research experimentation
+- Academic learning and prototyping
+
+---
+
+## Future Enhancements
+
+- Integration of diffusion-based generative models
+- Improved tumor classification accuracy
+- Cloud deployment (AWS/GCP/Azure)
+- Explainable AI (XAI) for model interpretability
+
+---
+
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- [Brain Tumor MRI Dataset](https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset/data) from Kaggle
-- Research papers implementing the original GAN architectures:
-  - [DCGAN](https://arxiv.org/abs/1511.06434)
-  - [ProGAN](https://arxiv.org/abs/1710.10196)
-  - [StyleGAN2](https://arxiv.org/abs/1912.04958)
-  - [WGAN](https://arxiv.org/abs/1701.07875)
+This project is licensed under the MIT License.
