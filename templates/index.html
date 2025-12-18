@@ -11,10 +11,13 @@
         .models {
             padding: 80px 20px;
             text-align: center;
-            background: linear-gradient(120deg, #f8fbff, #eef5fc);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 36px;
+            box-shadow: 0 35px 60px rgba(15, 23, 42, 0.2);
             animation: fadeInModels 1.5s ease-in-out;
+            backdrop-filter: blur(24px);
+            color: #0f172a;
+            border: 1px solid rgba(15, 23, 42, 0.08);
         }
 
         @keyframes fadeInModels {
@@ -65,15 +68,17 @@
         }
 
         .model-card {
-            background: linear-gradient(135deg,#60a5fa, #1e3a8a);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.61);
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.95), rgba(59, 130, 246, 0.9));
+            border-radius: 24px;
+            box-shadow: 0 25px 45px rgba(15, 23, 42, 0.45);
             text-align: center;
             padding: 30px;
             width: 280px;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(14px);
         }
 
         .model-card:hover {
@@ -130,8 +135,6 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="{{ url_for('generate_info') }}">Generate</a></li>
                 <li><a href="{{ url_for('detect_info') }}">Detect</a></li>
-                <li><a href="{{ url_for('about_us') }}">About Us</a></li>
-                <li><a href="{{ url_for('contact') }}">Contact</a></li>
                 
             </ul>
         </nav>
@@ -140,9 +143,23 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h1>AI-Powered Medical Imaging</h1>
-            <p>Transform your research with advanced AI-generated medical images that are fast reliable and cutting-edge technology.</p>
+            <div class="hero-highlight">
+                <span>Brain Tumor Dataset</span>
+                <span>Glioma • Meningioma • Pituitary • No Tumor</span>
+            </div>
+            <h1>AI-Powered Brain Tumor Imaging</h1>
+            <p>Transform your research with advanced AI-generated brain tumor images that are fast reliable and cutting-edge technology.</p>
             <a href="{{ url_for('generate_info') }}" class="btn-primary">Generate Images</a>
+            <div class="hero-meta">
+                <div class="meta-card">
+                    <h4>4 GAN Families</h4>
+                    <p>DCGAN, ProGAN, StyleGAN2, and WGAN-GP ready to use.</p>
+                </div>
+                <div class="meta-card">
+                    <h4>92% Detector</h4>
+                    <p>Vision Transformer validates every synthetic MRI.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -172,7 +189,7 @@
     <section class="models" id="models">
         <div class="container">
             <h2>Our Models</h2>
-            <p>Explore the advanced GAN architectures we utilize to generate medical images with exceptional quality and precision.</p>
+            <p>Explore the advanced GAN architectures we utilize to generate brain tumor images with exceptional quality and precision.</p>
             <div class="models-grid">
                 <div class="model-card">
                     <h3>Progressive GANs</h3>
@@ -180,7 +197,7 @@
                 </div>
                 <div class="model-card">
                     <h3>DCGANs</h3>
-                    <p>Deep Convolutional GANs leverage convolutional layers for generating realistic medical images efficiently.</p>
+                    <p>Deep Convolutional GANs leverage convolutional layers for generating realistic brain tumor images efficiently.</p>
                 </div>
                 <div class="model-card">
                     <h3>StyleGAN2</h3>
@@ -195,12 +212,14 @@
     </section>
 
     <footer class="footer" id="contact">
-        <div class="container">
-            <p>&copy; 2024 MedGAN Studio. All Rights Reserved.</p>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-title">MedGAN Studio</div>
+                <p class="footer-tagline">AI-powered brain tumor imaging sandbox for research-grade experimentation.</p>
+            </div>
             <div class="footer-links">
-                    <a href="mailto:medgan2025@gmail.com">Email Us</a>
-                    <a href="https://instagram.com/medgan"target="_blank">Instagram</a>
-                    <a href="https://www.linkedin.com/company/medgan/" target="_blank">LinkedIn</a>
+                <a href="mailto:support@medgan.ai">support@medgan.ai</a>
+                <a href="https://github.com/mozaloom/medgan" target="_blank" rel="noreferrer">GitHub</a>
             </div>
         </div>
     </footer>

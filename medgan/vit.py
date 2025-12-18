@@ -29,7 +29,7 @@ class TumorDetectionApp:
 
         # Load and preprocess the image
         try:
-            img = Image.open(image_path)
+            img = Image.open(image_path).convert("RGB")
             img = transform(img).unsqueeze(0).to(self.device)  # Add batch dimension
         except FileNotFoundError:
             print(f"Error: Image file not found at {image_path}")

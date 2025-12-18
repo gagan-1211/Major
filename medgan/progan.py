@@ -9,6 +9,8 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 from torch import nn
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 

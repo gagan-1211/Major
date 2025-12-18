@@ -1,13 +1,13 @@
 [![CI](https://github.com/mozaloom/medgan/actions/workflows/main.yml/badge.svg)](https://github.com/mozaloom/medgan/actions/workflows/main.yml)
 [![Docker Image CI](https://github.com/mozaloom/medgan/actions/workflows/push-docker.yml/badge.svg)](https://github.com/mozaloom/medgan/actions/workflows/push-docker.yml)
 
-# MedGAN: Advanced Medical Image Generation
+# MedGAN: AI-Powered Brain Tumor Imaging
 
 <img src="static/css/Blue_ABstract_Brain_Technology_Logo__1_-removebg-preview.png" alt="medgan Logo" width="120" style="margin-bottom: 20px;">
 
 ## Overview
 
-MedGAN is a comprehensive framework for generating high-quality synthetic medical images using state-of-the-art Generative Adversarial Networks (GANs). The project focuses on brain tumor MRI scans and includes implementations of multiple cutting-edge GAN architectures optimized for medical imaging applications.
+MedGAN is a comprehensive framework for generating high-quality synthetic brain tumor images using state-of-the-art Generative Adversarial Networks (GANs). The project focuses exclusively on brain tumor MRI scans and includes implementations of multiple cutting-edge GAN architectures optimized for brain tumor dataset generation.
 
 ## Features
 

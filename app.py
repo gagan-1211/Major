@@ -107,17 +107,9 @@ for label, path in model_paths["WGANs"].items():
 def home():
     return render_template("index.html")
 
-@app.route("/about_us")
-def about_us():
-    return render_template("About_us.html")
-
 @app.route("/generate_info")
 def generate_info():
     return render_template("generate.html")
-
-@app.route("/contact")
-def contact():
-    return render_template("contact.html")
 
 @app.route("/detect_info")
 def detect_info():
@@ -160,6 +152,9 @@ def generate():
     else:
         generator = generators[class_name]
         images_base64, image_buffers = generation_function(generator, noise, num_images)
+
+    # Persist images in app config for ZIP route
+    app.config["images_base64"] = images_base64
 
     # Create ZIP file for download
     zip_buffer = io.BytesIO()
