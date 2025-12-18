@@ -47,7 +47,7 @@ MedGAN is a comprehensive framework for generating high-quality synthetic brain 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/mozaloom/medgan.git
+git clone https://github.com/gagan-1211/Major.git
 cd medgan
 ```
 
